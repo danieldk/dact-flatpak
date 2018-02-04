@@ -1,0 +1,88 @@
+{
+    "app-id": "eu.danieldk.Dact",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.9",
+    "sdk": "org.kde.Sdk",
+    "command": "dact",
+    "rename-desktop-file": "dact.desktop",
+    "rename-icon": "dact",
+    "finish-args": [
+        "--socket=x11",
+        "--socket=wayland",
+        "--share=network",
+        "--device=dri",
+	"--share=ipc"
+    ],
+    "cleanup": [
+        "/include",
+        "/bin/db*",
+        "/bin/xqilla",
+        "/bin/alpinocorpus*"
+    ],
+    "modules": [
+        {
+            "name": "dbxml",
+            "buildsystem": "simple",
+            "build-commands": [
+                "./buildall.sh --prefix=/app"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://download.oracle.com/berkeley-db/dbxml-6.1.4.tar.gz",
+                    "sha256": "a8fc8f5e0c3b6e42741fa4dfc3b878c982ff8f5e5f14843f6a7e20d22e64251a"
+                },
+                {
+                    "type": "patch",
+                    "path": "cxx11.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "incorrect-optimization.patch"
+                }
+            ]
+        },
+        {
+            "name": "boost",
+            "buildsystem": "simple",
+            "build-options": {
+                "cxxflags": "-fPIC"
+            },
+            "build-commands": [
+                "./bootstrap.sh --prefix=/app --with-libraries=chrono,date_time,regex,program_options,system,filesystem,thread",
+                "./b2 headers",
+                "./b2 cxxflags=-fPIC install"
+            ],
+            "sources": [
+                {
+                    "sha256": "5721818253e6a0989583192f96782c4a98eb6204965316df9f5ad75819225ca9",
+                    "type": "archive",
+                    "url": "https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.bz2"
+                }
+            ]
+        },
+        {
+            "name": "alpinocorpus",
+            "buildsystem": "cmake",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/rug-compling/alpinocorpus/archive/2.8.1.tar.gz",
+		    "sha256": "1aa32d260316f827b7fc510d9414f26f7e595d6be97f32ce44c98e43aad03389"
+                }
+            ]
+        },
+        {
+            "name": "dact",
+            "buildsystem": "cmake",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/rug-compling/dact",
+                    "tag": "2.6.2",
+                    "commit": "03a5a1ffa152ab5789a8d97e50fa217943b45c47"
+                }
+            ]
+        }
+    ]
+}
