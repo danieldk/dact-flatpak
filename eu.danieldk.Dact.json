@@ -3,6 +3,7 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "5.9",
     "sdk": "org.kde.Sdk",
+    "branch": "master",
     "command": "dact",
     "rename-desktop-file": "dact.desktop",
     "rename-icon": "dact",
@@ -66,9 +67,9 @@
             "buildsystem": "cmake",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/rug-compling/alpinocorpus/archive/2.8.1.tar.gz",
-		    "sha256": "1aa32d260316f827b7fc510d9414f26f7e595d6be97f32ce44c98e43aad03389"
+                    "type": "git",
+                    "url": "https://github.com/rug-compling/alpinocorpus",
+		    "branch": "master"
                 }
             ]
         },
@@ -79,8 +80,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/rug-compling/dact",
-                    "tag": "2.6.2",
-                    "commit": "03a5a1ffa152ab5789a8d97e50fa217943b45c47"
+                    "branch": "master"
                 }
             ]
         }
