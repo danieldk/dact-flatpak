@@ -2,6 +2,7 @@
     "app-id": "eu.danieldk.Dact",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.9",
+    "branch": "stable",
     "sdk": "org.kde.Sdk",
     "command": "dact",
     "rename-desktop-file": "dact.desktop",
