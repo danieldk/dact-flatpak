@@ -13,7 +13,7 @@ following commands in a shell:
 
 ~~~
 flatpak remote-add --user dact https://flatpak.danieldk.eu/dact.flatpakrepo
-flatpak install --user dact eu.danieldk.Dact
+flatpak install --user dact eu.danieldk.Dact//stable
 ~~~
 
 Afterwards, a Dact item should be added to your desktop
@@ -26,3 +26,11 @@ flatpak update
 flatpak update --user
 ~~~
 
+### Development version
+
+It is also possible to retrieve a development version of Dact:
+
+~~~
+flatpak remote-add --user dact https://flatpak.danieldk.eu/dact.flatpakrepo
+flatpak install --user dact eu.danieldk.Dact//master
+~~~
