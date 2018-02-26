@@ -80,8 +80,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/rug-compling/dact",
-                    "tag": "2.6.2",
-                    "commit": "03a5a1ffa152ab5789a8d97e50fa217943b45c47"
+                    "tag": "2.6.3",
+                    "commit": "a9277dd5907beb0dba70d814c2e5f9b27e3c9812"
                 }
             ]
         }
