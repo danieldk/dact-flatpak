@@ -12,6 +12,9 @@ You can install and try out the Flatpak by executing the
 following commands in a shell:
 
 ~~~
+# Ensure that the Flathub repois available
+flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 flatpak remote-add --user dact https://flatpak.danieldk.eu/dact.flatpakrepo
 flatpak install --user dact eu.danieldk.Dact//stable
 ~~~
