@@ -1,7 +1,7 @@
 {
     "app-id": "eu.danieldk.Dact",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.9",
+    "runtime-version": "5.10",
     "sdk": "org.kde.Sdk",
     "branch": "master",
     "command": "dact",
@@ -12,7 +12,7 @@
         "--socket=wayland",
         "--share=network",
         "--device=dri",
-	"--share=ipc"
+        "--share=ipc"
     ],
     "cleanup": [
         "/include",
@@ -80,7 +80,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/rug-compling/dact",
-                    "branch": "master"
+                    "branch": "hidpi-icons"
                 }
             ]
         }
